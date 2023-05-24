@@ -1,0 +1,25 @@
+{
+  "name": "@your-name/your-package-name",
+  "description": "Description of your action...",
+  "author": "Your Name <your@email.example.com>",
+  "license": "MIT",
+  "readme": "README.md",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild index.ts --bundle --platform=node --outfile=dist/index.js",
+    "check": "rome format . && rome check .",
+    "fix": "rome format --write . && rome check --apply-unsafe ."
+  },
+  "dependencies": {
+    "@actions/core": "^1",
+    "@actions/exec": "^1",
+    "@actions/github": "^5",
+    "@octokit/rest": "^19"
+  },
+  "devDependencies": {
+    "@types/node": "^16",
+    "esbuild": "^0.17",
+    "rome": "^12",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,14 @@
+name: <Your Action>
+description: <Description of your action...>
+author: <Your name>
+branding:
+  icon: check
+  color: green
+runs:
+  using: node16
+  main: 'index.js'
+inputs:
+  token:
+    required: true
+    description: Authenticated GitHub token.
+    default: '${{ github.token }}'
