@@ -1,0 +1,28 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        description: 'Version name of the new release.'
+        required: true
+
+jobs:
+  new:
+    name: New Release
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - run: corepack enable pnpm
+
+      - uses: yumemi-inc/action-release-action@v1
+        with:
+          version: '${{ inputs.version }}'
