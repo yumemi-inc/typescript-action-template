@@ -3,6 +3,7 @@ import { exit } from 'node:process';
 import { error, getInput } from '@actions/core';
 import { context } from '@actions/github';
 import { Octokit } from '@octokit/rest';
+import fetch from 'node-fetch';
 
 const getInputRequired = (name: string) =>
   getInput(name, {
@@ -13,6 +14,9 @@ const getInputRequired = (name: string) =>
   const octokit = new Octokit({
     baseUrl: context.apiUrl,
     auth: getInputRequired('token'),
+    request: {
+      fetch,
+    },
   });
 
   // Do something...
