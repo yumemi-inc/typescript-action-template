@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@types/node": "^16.18.39",
-    "esbuild": "^0.18.18",
+    "esbuild": "^0.18.19",
     "rome": "^12.1.3",
     "typescript": "^5.1.6"
   }
