@@ -18,7 +18,7 @@
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
-    "@types/node": "^16.18.39",
+    "@types/node": "^16.18.41",
     "esbuild": "^0.19.2",
     "rome": "^12.1.3",
     "typescript": "^5.1.6"
