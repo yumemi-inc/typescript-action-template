@@ -7,8 +7,8 @@
   "main": "index.js",
   "scripts": {
     "build": "esbuild index.ts --bundle --platform=node --outfile=dist/index.js",
-    "check": "rome format . && rome check .",
-    "fix": "rome format --write . && rome check --apply-unsafe ."
+    "check": "biome format . && biome check .",
+    "fix": "biome format --write . && biome check --apply-unsafe ."
   },
   "dependencies": {
     "@actions/core": "^1.10.0",
@@ -18,9 +18,9 @@
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.0.0",
     "@types/node": "^20.5.9",
     "esbuild": "^0.19.2",
-    "rome": "^12.1.3",
     "typescript": "^5.2.2"
   }
 }
