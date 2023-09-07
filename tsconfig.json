@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "module": "CommonJS",
-    "target": "ES2022"
+    "target": "ES2022",
+    "strict": true
   },
   "exclude": [
     "node_modules"
