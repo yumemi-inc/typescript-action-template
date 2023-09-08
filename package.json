@@ -6,7 +6,7 @@
   "readme": "README.md",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild index.ts --bundle --platform=node --outfile=dist/index.js",
+    "build": "bun build index.ts --target=node --outfile=dist/index.js",
     "check": "biome format . && biome check .",
     "fix": "biome format --write . && biome check --apply-unsafe ."
   },

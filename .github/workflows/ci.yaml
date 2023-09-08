@@ -18,22 +18,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: oven-sh/setup-bun@v1
         with:
-          node-version: '20'
-
-      - run: corepack enable pnpm
-
-      - id: pnpm-cache
-        shell: bash
-        run: echo "path=$(pnpm store path)" >> "${GITHUB_OUTPUT}"
+          bun-version: '1.0.0'
 
       - uses: actions/cache@v3
         with:
-          path: ${{ steps.pnpm-cache.outputs.path }}
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
-          restore-keys: ${{ runner.os }}-pnpm-
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lockb') }}
+          restore-keys: ${{ runner.os }}-bun-
 
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm run check
-      - run: pnpm run build
+      - run: bun install --frozen-lockfile
+      - run: bun run check
+      - run: bun run build
